@@ -1,2 +1,2 @@
-# WDGWV-Framework
-WDGWV Framework
+# WDG Framework
+WDG Framework
