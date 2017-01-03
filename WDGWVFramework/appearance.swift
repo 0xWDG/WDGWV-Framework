@@ -1,0 +1,213 @@
+/**
+ Copyright (c) 2016 Wesley de Groot (http://www.wesleydegroot.nl), WDGWV (http://www.wdgwv.com)
+ 
+ Variable prefixes:
+ WDGS = WDG.Framework Shared
+ WDGT = WDG.Framework Tests (internal)
+ WDGI = WDG.Framework Internal
+ WDGU = WDG.Framework Unspecified
+ 
+ ---------------------------------------------------
+ File:    appearance.swift
+ Created: 18-FEB-2016
+ Creator: Wesley de Groot | g: @wdg | t: @wesdegroot
+ Issue:   #
+ Prefix:  N/A
+ ---------------------------------------------------
+ */
+
+import Foundation
+#if os(OSX)
+    import Cocoa
+    import AppKit
+#endif
+#if os(iOS)
+    import UIKit
+#endif
+
+public extension WDGFramework {
+    
+    public enum Blur: CustomDebugStringConvertible {
+        case light
+        case dark
+        case xlight
+        
+        public var debugDescription: String {
+            switch self {
+            case .light:
+                return "Light"
+            case .dark:
+                return "Dark"
+            case .xlight:
+                return "Xlight"
+            }
+        }
+    }
+    
+    #if os(OSX)
+    /**
+     Append Blur to a window
+     
+     - Parameter view: The NSButton, NSView, NSTextField, ...
+     - Parameter color: The Color (light/dark)
+     - Parameter alwaysBlur: true (default), false=not when in background
+     - Parameter hideTitle: false (default), true=hide title
+     */
+    func appearanceBlur(view: AnyObject, _ color: Blur? = Blur.Xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+    if (view is NSButton || view is NSTextField || view is NSView) {
+    var Mcolor = ""
+    
+    if (NSUserDefaults.standardUserDefaults().objectForKey("blur") as! String == "(null)") {
+    if (color == Blur.Xlight) {
+    Mcolor = "light"
+    }
+    } else {
+    if (color == Blur.Xlight) {
+    Mcolor = NSUserDefaults.standardUserDefaults().objectForKey("blur") as! String
+    
+    if (Mcolor == "light") {
+    Mcolor = "dark"
+    } else {
+    Mcolor = "light"
+    }
+    }
+    }
+    
+    if (color == Blur.Light) {
+    Mcolor = "light"
+    }
+    
+    if (color == Blur.Dark) {
+    Mcolor = "dark"
+    }
+    
+    NSUserDefaults.standardUserDefaults().setObject(Mcolor, forKey: "blur")
+    NSUserDefaults.standardUserDefaults().synchronize()
+    
+    if view is NSTextField || view is NSButton {
+    if (Mcolor == "dark") {
+    Mcolor = "light"
+    } else {
+    Mcolor = "dark"
+    }
+    }
+    
+    let blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+    
+    // this is default value but is here for clarity
+    blurryView.blendingMode = NSVisualEffectBlendingMode.BehindWindow
+    
+    if (Mcolor == "light") {
+    blurryView.material = NSVisualEffectMaterial.Light
+    } else {
+    blurryView.material = NSVisualEffectMaterial.Dark
+    }
+    
+    if ((alwaysBlur) != nil) {
+    blurryView.state = NSVisualEffectState.Active
+    } else {
+    blurryView.state = NSVisualEffectState.FollowsWindowActiveState
+    }
+    
+    if view is NSView {
+    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSView))
+    }
+    
+    if view is NSTextField {
+    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSTextField))
+    }
+    
+    if view is NSButton {
+    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSButton))
+    }
+    } else {
+    print("At this point i only support NSButton, NSTextField, NSView")
+    print("Please report a issue on:")
+    print("https://gist.github.com/wdg/b5dfcb8b3cac0faa6907719f3992d696")
+    }
+    }
+    
+    /**
+     Append Blur to a window (Alias)
+     
+     - Parameter view: The NSButton, NSView, NSTextField, ...
+     - Parameter color: The Color (light/dark)
+     - Parameter alwaysBlur: true (default), false=not when in background
+     - Parameter hideTitle: false (default), true=hide title
+     */
+    func appendBlur(view: AnyObject, _ color: Blur? = Blur.Xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+    self.appearanceBlur(view, color, alwaysBlur, hideTitle)
+    }
+    
+    #else
+    /**
+     Append Blur to a window (*NOT SUPPORTED ON THIS PLATFORM!*)
+     
+     - Parameter view: The NS*
+     - Parameter color: The Color (light/dark)
+     - Parameter alwaysBlur: true (default), false=not when in background
+     - Parameter hideTitle: false (default), true=hide title
+     */
+    func appearanceBlur(_ view: AnyObject, _ color: Blur? = Blur.xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+        
+    }
+    
+    /**
+     Append Blur to a window (Alias)
+     
+     - Parameter view: The NSButton, NSView, NSTextField, ...
+     - Parameter color: The Color (light/dark)
+     - Parameter alwaysBlur: true (default), false=not when in background
+     - Parameter hideTitle: false (default), true=hide title
+     */
+    func appendBlur(_ view: AnyObject, _ color: Blur? = Blur.xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+        self.appearanceBlur(view, color, alwaysBlur, hideTitle)
+    }
+    #endif
+    
+    #if os(iOS)
+    /**
+     Set Apps background as a specific color
+     
+     - Parameter color: the color
+     */
+    public func setAppColor(_ color: UIColor) {
+        // iOS
+        UIView.appearance().tintColor = color
+        
+        // Mac?
+        UIWindow.appearance().tintColor =  color
+    }
+    
+    /**
+     Set Apps background as a image
+     
+     - Parameter color: the image
+     */
+    public func setAppImage(_ image: UIImage) {
+        // iOS
+        UIView.appearance().tintColor = UIColor.init(patternImage: image)
+        
+        // Mac?
+        UIWindow.appearance().tintColor = UIColor.init(patternImage: image)
+    }
+    #else
+    /**
+     Set Apps background as a specific color
+     
+     - Parameter color: the color
+     */
+    @available(*, unavailable, message: "Only useable in iOS") public func setAppColor(color: AnyObject) {
+    print("Not supported")
+    }
+    
+    /**
+     Set Apps background as a image
+     
+     - Parameter color: the image
+     */
+    @available(*, unavailable, message: "Only useable in iOS") public func setAppImage(color: AnyObject) {
+    print("Not supported")
+    }
+    #endif
+}

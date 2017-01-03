@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>WDGWV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>WDGWVFramework 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>WDGWVFramework 4.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WDGWVFramework 6.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>WDGWVFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>6E02A0411C358CC200D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E02A04B1C358CC200D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E02A0601C358D2F00D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E02A0691C358D2F00D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E02A07C1C358D4400D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E02A0851C358D4400D2DD58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E9856961C35ACE200F0E6C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E98569F1C35ACE300F0E6C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E9856B21C35AD4100F0E6C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
