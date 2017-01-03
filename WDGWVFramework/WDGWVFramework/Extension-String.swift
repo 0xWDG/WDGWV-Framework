@@ -961,6 +961,14 @@ public extension String {
             .replaceLC("(bl)", withString: "💙")
     }
     
+    public func contains(search: String, caseSentive: Bool = false) -> Bool {
+        if (caseSentive) {
+            return (self.range(of: search) != nil)
+        } else {
+            return (self.lowercased.range(of: search.lowercased) != nil)
+        }
+    }
+    
     public func replaceLC(_ target: String, withString: String) -> String {
         return (self.lowercased()).replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }

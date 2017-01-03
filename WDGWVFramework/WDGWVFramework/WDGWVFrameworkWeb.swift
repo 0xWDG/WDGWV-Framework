@@ -40,7 +40,7 @@ extension WDGFramework {
                 return myHTMLString as String
             }
             catch let error as NSError {
-                return "Error : \(error.localizedDescription)"
+                return "Error: \(error.localizedDescription)"
             }
         } else {
             return "Error: \(url) doesn't  URL"
