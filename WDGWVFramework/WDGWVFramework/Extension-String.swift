@@ -283,14 +283,7 @@ public extension String {
             "&diams;" : "\u{2666}",
             ]
     }
-    
-    /**
-     get capitalized string
-     */
-    public var capitalized: String {
-        return self.capitalized
-    }
-    
+        
     /**
      get lowercased string
      */

@@ -49,7 +49,7 @@ open class WDGFrameworkiCloudSync {
         }
     }
     
-    @objc fileprivate func fromCloud () {
+    @objc private func fromCloud () {
 //        print("Getting from iCloud")
         // iCloud to a Dictionary
         let dict: NSDictionary = NSUbiquitousKeyValueStore.default.dictionaryRepresentation as NSDictionary
@@ -72,7 +72,7 @@ open class WDGFrameworkiCloudSync {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "MKiCloudSyncDidUpdateToLatest"), object: nil)
     }
     
-    @objc fileprivate func toCloud() {
+    @objc private func toCloud() {
 //        print("Going to iCloud")
         // NSUserDefaults to a dictionary
         let dict: NSDictionary = UserDefaults.standard.dictionaryRepresentation() as NSDictionary
