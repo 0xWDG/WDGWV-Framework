@@ -57,7 +57,7 @@ extension WDGFramework {
     open func removeHTML(_ html: String) -> String {
         do {
             let regex:NSRegularExpression = try NSRegularExpression(pattern: "<.*?>", options: NSRegularExpression.Options.caseInsensitive)
-            let range = NSMakeRange(0, html.characters.count)
+            let range = NSMakeRange(0, html.count)
             let htmlLessString :String = regex.stringByReplacingMatches(in: html, options: [], range:range, withTemplate: "")
             return htmlLessString
         }

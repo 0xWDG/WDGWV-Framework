@@ -288,9 +288,7 @@ public extension String {
      get capitalized string
      */
     public var capitalized: String {
-        get {
-            return self.capitalized
-        }
+        return self.capitalized
     }
     
     /**
@@ -307,7 +305,7 @@ public extension String {
      */
     public var length: Int {
         get {
-            return self.characters.count
+            return self.count
         }
     }
     
@@ -356,7 +354,7 @@ public extension String {
      */
     func characterAtIndex(_ index: Int) -> Character! {
         var cur = 0
-        for char in self.characters {
+        for char in self {
             if cur == index {
                 return char
             }
@@ -385,7 +383,7 @@ public extension String {
      */
     public subscript(i: Int) -> Character {
         get {
-            let index = self.characters.index(self.startIndex, offsetBy: i)
+            let index = self.index(self.startIndex, offsetBy: i)
             return self[index]
         }
     }
@@ -399,10 +397,10 @@ public extension String {
      */
     public subscript(r: Range<Int>) -> String {
         get {
-            let startIndex = self.characters.index(self.startIndex, offsetBy: r.lowerBound)
-            let endIndex = self.characters.index(self.startIndex, offsetBy: r.upperBound - 1)
+            let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
+            let endIndex = self.index(self.startIndex, offsetBy: r.upperBound - 1)
             
-            return self[startIndex..<endIndex]
+            return String(self[startIndex..<endIndex])
         }
     }
     
@@ -415,10 +413,10 @@ public extension String {
      */
     public subscript(r: CountableClosedRange<Int>) -> String {
         get {
-            let startIndex = self.characters.index(self.startIndex, offsetBy: r.lowerBound)
-            let endIndex = self.characters.index(self.startIndex, offsetBy: r.upperBound - 1)
+            let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
+            let endIndex = self.index(self.startIndex, offsetBy: r.upperBound - 1)
             
-            return self[startIndex..<endIndex]
+            return String(self[startIndex..<endIndex])
         }
     }
     
@@ -431,26 +429,28 @@ public extension String {
      - returns: The string between the two bookends, or nil if the bookends cannot be found, the bookends are the same or appear contiguously.
      */
     func between(_ left: String, _ right: String) -> String? {
-        guard
-            let leftRange = range(of: left), let rightRange = range(of: right, options: .backwards)
-            , left != right && leftRange.upperBound != rightRange.lowerBound
-            else {return nil}
+        guard let leftRange = range(of: left), let rightRange = range(of: right, options: .backwards), left != right && leftRange.upperBound != rightRange.lowerBound
+            else {
+                return nil
+        }
         
-        return self[leftRange.upperBound...(before: rightRange.lowerBound)]
+        
+        //        return self[leftRange.upperBound...(before: rightRange.lowerBound)]
+        return self
         
     }
     
     // https://gist.github.com/stevenschobert/540dd33e828461916c11
     func camelize() -> String {
         let source = clean(" ", allOf: "-", "_")
-        if source.characters.contains(" ") {
-            let first = source.substring(to: source.characters.index(source.startIndex, offsetBy: 1))
+        if source.contains(" ") {
+            let first = source[...source.startIndex]
             let cammel = NSString(format: "%@", (source as NSString).capitalized.replacingOccurrences(of: " ", with: "", options: [], range: nil)) as String
-            let rest = String(cammel.characters.dropFirst())
+            let rest = String(cammel.dropFirst())
             return "\(first)\(rest)"
         } else {
-            let first = (source as NSString).lowercased.substring(to: source.characters.index(source.startIndex, offsetBy: 1))
-            let rest = String(source.characters.dropFirst())
+            let first = (source as NSString).lowercased[...source.startIndex]
+            let rest = String(source.dropFirst())
             return "\(first)\(rest)"
         }
     }
@@ -462,9 +462,9 @@ public extension String {
     func chompLeft(_ prefix: String) -> String {
         if let prefixRange = range(of: prefix) {
             if prefixRange.upperBound >= endIndex {
-                return self[startIndex..<prefixRange.lowerBound]
+                return String(self[startIndex..<prefixRange.lowerBound])
             } else {
-                return self[prefixRange.upperBound..<endIndex]
+                return String(self[prefixRange.upperBound..<endIndex])
             }
         }
         return self
@@ -473,9 +473,9 @@ public extension String {
     func chompRight(_ suffix: String) -> String {
         if let suffixRange = range(of: suffix, options: .backwards) {
             if suffixRange.upperBound >= endIndex {
-                return self[startIndex..<suffixRange.lowerBound]
+                return String(self[startIndex..<suffixRange.lowerBound])
             } else {
-                return self[suffixRange.upperBound..<endIndex]
+                return String(self[suffixRange.upperBound..<endIndex])
             }
         }
         return self
@@ -520,7 +520,7 @@ public extension String {
     
     func indexOf(_ substring: String) -> Int? {
         if let range = range(of: substring) {
-            return characters.distance(from: startIndex, to: range.lowerBound)
+            return self.distance(from: startIndex, to: range.lowerBound)
         }
         return nil
     }
@@ -536,7 +536,7 @@ public extension String {
     }
     
     func isAlpha() -> Bool {
-        for chr in characters {
+        for chr in self {
             if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z")) {
                 return false
             }
@@ -570,7 +570,7 @@ public extension String {
     }
     
     func lines() -> [String] {
-        return characters.split {$0 == "\n"}.map(String.init)
+        return self.split {$0 == "\n"}.map(String.init)
     }
     
     func pad(_ n: Int, _ string: String = " ") -> String {
@@ -594,7 +594,7 @@ public extension String {
     }
     
     func split(_ separator: Character) -> [String] {
-        return characters.split {$0 == separator}.map(String.init)
+        return self.split {$0 == separator}.map(String.init)
     }
     
     var textLines: [String] {
@@ -618,7 +618,12 @@ public extension String {
     }
     
     func times(_ n: Int) -> String {
-        return (0..<n).reduce("") {$0.0 + self}
+//        return (0..<n).reduce("") {$0 + self}
+        var returnString = ""
+        for _ in stride(from: 0, to: n, by: 1) {
+            returnString += self
+        }
+        return returnString
     }
     
     func toFloat() -> Float? {
@@ -637,7 +642,7 @@ public extension String {
     
     func toDouble(_ locale: Locale = Locale.current) -> Double? {
         let nf = NumberFormatter()
-        nf.locale = locale as Locale!
+        nf.locale = locale as Locale
         if let number = nf.number(from: self) {
             return number.doubleValue
         }
@@ -674,7 +679,7 @@ public extension String {
      */
     func trimmedLeft() -> String {
         if let range = rangeOfCharacter(from: CharacterSet.whitespacesAndNewlines.inverted) {
-            return self[range.lowerBound..<endIndex]
+            return String(self[range.lowerBound..<endIndex])
         }
         
         return self
@@ -687,7 +692,7 @@ public extension String {
      */
     func trimmedRight() -> String {
         if let range = rangeOfCharacter(from: CharacterSet.whitespacesAndNewlines.inverted, options: NSString.CompareOptions.backwards) {
-            return self[startIndex..<range.upperBound]
+            return String(self[startIndex..<range.upperBound])
         }
         
         return self
@@ -734,9 +739,10 @@ public extension String {
      */
     fileprivate func decode(_ entity : String) -> Character? {
         if entity.hasPrefix("&#x") || entity.hasPrefix("&#X") {
-            return decodeNumeric(entity.substring(from: entity.characters.index(entity.startIndex, offsetBy: 3)), base: 16)
+            //index(startIndex, offsetBy: from)
+            return decodeNumeric(String(entity[entity.index(entity.startIndex, offsetBy: 3)...]), base: 16)
         } else if entity.hasPrefix("&#") {
-            return decodeNumeric(entity.substring(from: entity.characters.index(entity.startIndex, offsetBy: 2)), base: 10)
+            return decodeNumeric(String(entity[entity.index(entity.startIndex, offsetBy: 2)...]), base: 10)
         } else {
             return HTMLEntities.characterEntities[entity]
         }
@@ -753,7 +759,7 @@ public extension String {
         
         // Find the next '&' and copy the characters preceding it to `result`:
         while let ampRange = self.range(of: "&", range: position..<endIndex) {
-            result.append(self[position..<ampRange.lowerBound])
+            result.append(String(self[position..<ampRange.lowerBound]))
             position = ampRange.lowerBound
             
             // Find the next ';' and copy everything from '&' to ';' into `entity`
@@ -761,12 +767,12 @@ public extension String {
                 let entity = self[position..<semiRange.upperBound]
                 position = semiRange.upperBound
                 
-                if let decoded = decode(entity) {
+                if let decoded = decode(String(entity)) {
                     // Replace by decoded character:
                     result.append(decoded)
                 } else {
                     // Invalid entity, copy verbatim:
-                    result.append(entity)
+                    result.append(String(entity))
                 }
             } else {
                 // No matching ';'.
@@ -774,7 +780,7 @@ public extension String {
             }
         }
         // Copy remaining characters to `result`:
-        result.append(self[position..<endIndex])
+        result.append(String(self[position..<endIndex]))
         return result
     }
     
@@ -856,11 +862,11 @@ public extension String {
             
             if (start < 1) {
                 // Count down to end.
-                let startPosition: Int = (str.characters.count + start)
-                return str[startPosition...str.characters.count]
+                let startPosition: Int = (str.count + start)
+                return str[startPosition...str.count]
             } else {
                 // Ok we'll start at point...
-                return str[start...str.characters.count]
+                return str[start...str.count]
             }
         } else {
             // Ok, this could be fun, but we can also..
@@ -870,18 +876,18 @@ public extension String {
             if (length > 0) {
                 if (start < 1) {
                     // We'll know this trick!
-                    let startPosition: Int = (str.characters.count + start)
+                    let startPosition: Int = (str.count + start)
                     
                     // Will be postitive in the end. (hopefully :P)
                     // Ok, this is amazing! let me explain
                     // String Count - (String count - -Start Point) + length
                     // ^^^ -- is + (Since Start Point is a negative number)
                     // String Count - Start point + length
-                    var endPosition: Int = ((str.characters.count - (str.characters.count + start)) + length)
+                    var endPosition: Int = ((str.count - (str.count + start)) + length)
                     
                     // If the endposition > the string, just string length.
-                    if (endPosition > str.characters.count) {
-                        endPosition = str.characters.count
+                    if (endPosition > str.count) {
+                        endPosition = str.count
                     }
                     
                     // i WILL return ;)
@@ -891,11 +897,11 @@ public extension String {
                     let startPosition: Int = start
                     
                     // Will be postitive in the end. (hopefully :P)
-                    var endPosition: Int = ((str.characters.count - start) + length)
+                    var endPosition: Int = ((str.count - start) + length)
                     
                     // If the endposition > the string, just string length.
-                    if (endPosition > str.characters.count) {
-                        endPosition = str.characters.count
+                    if (endPosition > str.count) {
+                        endPosition = str.count
                     }
                     
                     // i WILL return ;)
@@ -910,14 +916,14 @@ public extension String {
                     // But, Wait. Start is also negative?!
                     
                     // Count down to end.
-                    let startPosition: Int = (str.characters.count + start)
+                    let startPosition: Int = (str.count + start)
                     
                     // We'll doing some magic here again, please, i don't explain this one also! (HAHA)
-                    var endPosition: Int = (str.characters.count - ((str.characters.count + start) + (length + 1)))
+                    var endPosition: Int = (str.count - ((str.count + start) + (length + 1)))
                     
                     // If the endposition > the string, just string length.
-                    if (endPosition > str.characters.count) {
-                        endPosition = str.characters.count
+                    if (endPosition > str.count) {
+                        endPosition = str.count
                     }
                     
                     // i WILL return ;)
@@ -926,14 +932,14 @@ public extension String {
                     // Ok we'll start at point...
                     
                     // Count down to end.
-                    let startPosition: Int = (str.characters.count - start)
+                    let startPosition: Int = (str.count - start)
                     
                     // We'll doing some magic here again, please, i don't explain this one also! (HAHA)
-                    var endPosition: Int = (str.characters.count - ((str.characters.count - start) + (length + 1)))
+                    var endPosition: Int = (str.count - ((str.count - start) + (length + 1)))
                     
                     // If the endposition > the string, just string length.
-                    if (endPosition > str.characters.count) {
-                        endPosition = str.characters.count
+                    if (endPosition > str.count) {
+                        endPosition = str.count
                     }
                     
                     // i WILL return ;)
@@ -982,13 +988,13 @@ public extension String {
         return String(self[i] as Character)
     }
     
-    /**
-     Make a sha1 Hash for the string.
-     - Returns: sha1 hashed string
-     */
-    public var sha1: String {
-        get {
-            return SHA1Hashing().hash(self)
-        }
-    }
+    //    /**
+    //     Make a sha1 Hash for the string.
+    //     - Returns: sha1 hashed string
+    //     */
+    //    public var sha1: String {
+    //        get {
+    //            return SHA1Hashing().hash(self)
+    //        }
+    //    }
 }

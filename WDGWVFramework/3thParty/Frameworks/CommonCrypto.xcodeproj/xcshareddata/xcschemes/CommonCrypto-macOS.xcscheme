@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E02A07C1C358D4400D2DD58"
-               BuildableName = "WDGFramework.framework"
-               BlueprintName = "WDGFramework-OSX"
-               ReferencedContainer = "container:WDGFramework.xcodeproj">
+               BlueprintIdentifier = "211216821AE68D26004E1CE6"
+               BuildableName = "CommonCrypto.framework"
+               BlueprintName = "CommonCrypto-macOS"
+               ReferencedContainer = "container:CommonCrypto.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,26 +29,7 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E02A0851C358D4400D2DD58"
-               BuildableName = "WDGFramework.xctest"
-               BlueprintName = "WDGFrameworkTests-OSX"
-               ReferencedContainer = "container:WDGFramework.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E02A07C1C358D4400D2DD58"
-            BuildableName = "WDGFramework.framework"
-            BlueprintName = "WDGFramework-OSX"
-            ReferencedContainer = "container:WDGFramework.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -66,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E02A07C1C358D4400D2DD58"
-            BuildableName = "WDGFramework.framework"
-            BlueprintName = "WDGFramework-OSX"
-            ReferencedContainer = "container:WDGFramework.xcodeproj">
+            BlueprintIdentifier = "211216821AE68D26004E1CE6"
+            BuildableName = "CommonCrypto.framework"
+            BlueprintName = "CommonCrypto-macOS"
+            ReferencedContainer = "container:CommonCrypto.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E02A07C1C358D4400D2DD58"
-            BuildableName = "WDGFramework.framework"
-            BlueprintName = "WDGFramework-OSX"
-            ReferencedContainer = "container:WDGFramework.xcodeproj">
+            BlueprintIdentifier = "211216821AE68D26004E1CE6"
+            BuildableName = "CommonCrypto.framework"
+            BlueprintName = "CommonCrypto-macOS"
+            ReferencedContainer = "container:CommonCrypto.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

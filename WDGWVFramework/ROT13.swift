@@ -56,7 +56,7 @@ class ROT13 {
 	 - Returns: ROT13 en/decoded string
 	 */
 	func crypt(_ str: String, rotateAmount: Int) -> String {
-		return "".join(str.characters.map {
+		return "".join(str.map {
 				(char) -> String in
 				let num = String(char).unicodeScalars
 				let characterIntVal = num.first!.value

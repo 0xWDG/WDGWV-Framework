@@ -19,5 +19,15 @@ extension WDGFramework {
             }
         }
     }
+   
+    public func runOn(main: @escaping (String) -> ()) {
+        DispatchQueue.main.async {
+            main("")
+        }
+    }
     
+    public func delay(_ delay:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
 }

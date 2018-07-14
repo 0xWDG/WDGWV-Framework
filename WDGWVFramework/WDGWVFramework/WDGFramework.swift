@@ -33,19 +33,20 @@ open class WDGFramework {
      The shared instance of the "WDGWVFramework"
      - Parameter sharedInstance: The "WDGWVFramework" shared instance
      */
-    open static let sharedInstance = WDGFramework(true)
+    public static let sharedInstance = WDGFramework(true)
+    public static let shared = WDGFramework(true)
     
     /**
      The version of WDGWVFramework
      - Parameter version: The version of WDGWVFramework
      */
-    open let version = "0.1a"//WDGFrameworkVersionNumber
+    public let version = "0.1a"//WDGFrameworkVersionNumber
     
     /**
      The product name
      - Parameter product: The product name
      */
-    open let product = "WDGWV Framework"
+    public let product = "WDGWV Framework"
     
     /**
      This will setup iCloud sync!

@@ -53,17 +53,17 @@ public extension WDGFramework {
      - Parameter alwaysBlur: true (default), false=not when in background
      - Parameter hideTitle: false (default), true=hide title
      */
-    func appearanceBlur(view: AnyObject, _ color: Blur? = Blur.Xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+    func appearanceBlur(view: AnyObject, _ color: Blur? = Blur.xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
     if (view is NSButton || view is NSTextField || view is NSView) {
     var Mcolor = ""
     
-    if (NSUserDefaults.standardUserDefaults().objectForKey("blur") as! String == "(null)") {
-    if (color == Blur.Xlight) {
+        if (UserDefaults.standard.object(forKey: "blur") as! String == "(null)") {
+            if (color == Blur.xlight) {
     Mcolor = "light"
     }
     } else {
-    if (color == Blur.Xlight) {
-    Mcolor = NSUserDefaults.standardUserDefaults().objectForKey("blur") as! String
+            if (color == Blur.xlight) {
+                Mcolor = UserDefaults.standard.object(forKey: "blur") as! String
     
     if (Mcolor == "light") {
     Mcolor = "dark"
@@ -73,16 +73,16 @@ public extension WDGFramework {
     }
     }
     
-    if (color == Blur.Light) {
+        if (color == Blur.light) {
     Mcolor = "light"
     }
     
-    if (color == Blur.Dark) {
+        if (color == Blur.dark) {
     Mcolor = "dark"
     }
     
-    NSUserDefaults.standardUserDefaults().setObject(Mcolor, forKey: "blur")
-    NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(Mcolor, forKey: "blur")
+        UserDefaults.standard.synchronize()
     
     if view is NSTextField || view is NSButton {
     if (Mcolor == "dark") {
@@ -95,30 +95,30 @@ public extension WDGFramework {
     let blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
     
     // this is default value but is here for clarity
-    blurryView.blendingMode = NSVisualEffectBlendingMode.BehindWindow
+        blurryView.blendingMode = NSVisualEffectBlendingMode.behindWindow
     
     if (Mcolor == "light") {
-    blurryView.material = NSVisualEffectMaterial.Light
+        blurryView.material = NSVisualEffectMaterial.light
     } else {
-    blurryView.material = NSVisualEffectMaterial.Dark
+        blurryView.material = NSVisualEffectMaterial.dark
     }
     
     if ((alwaysBlur) != nil) {
-    blurryView.state = NSVisualEffectState.Active
+        blurryView.state = NSVisualEffectState.active
     } else {
-    blurryView.state = NSVisualEffectState.FollowsWindowActiveState
+        blurryView.state = NSVisualEffectState.followsWindowActiveState
     }
     
     if view is NSView {
-    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSView))
+        view.addSubview(blurryView, positioned: NSWindowOrderingMode.below, relativeTo: (view as! NSView))
     }
     
     if view is NSTextField {
-    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSTextField))
+        view.addSubview(blurryView, positioned: NSWindowOrderingMode.below, relativeTo: (view as! NSTextField))
     }
     
     if view is NSButton {
-    view.addSubview(blurryView, positioned: NSWindowOrderingMode.Below, relativeTo: (view as! NSButton))
+        view.addSubview(blurryView, positioned: NSWindowOrderingMode.below, relativeTo: (view as! NSButton))
     }
     } else {
     print("At this point i only support NSButton, NSTextField, NSView")
@@ -135,8 +135,8 @@ public extension WDGFramework {
      - Parameter alwaysBlur: true (default), false=not when in background
      - Parameter hideTitle: false (default), true=hide title
      */
-    func appendBlur(view: AnyObject, _ color: Blur? = Blur.Xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
-    self.appearanceBlur(view, color, alwaysBlur, hideTitle)
+    func appendBlur(view: AnyObject, _ color: Blur? = Blur.xlight, _ alwaysBlur: Bool? = true, _ hideTitle: Bool? = false) -> Void {
+        self.appearanceBlur(view: view, color, alwaysBlur, hideTitle)
     }
     
     #else
