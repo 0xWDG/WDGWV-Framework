@@ -128,7 +128,7 @@ extension String  {
             hash.appendFormat("%02x", result[i])
         }
         
-        result.deallocate(capacity: digestLen)
+//        result.deallocate(capacity: digestLen)
         
         return String(format: hash as String)
     }
