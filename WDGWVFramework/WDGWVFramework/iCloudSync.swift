@@ -69,7 +69,7 @@ open class WDGFrameworkiCloudSync {
         NotificationCenter.default.addObserver(self, selector: #selector(WDGFrameworkiCloudSync.toCloud), name: UserDefaults.didChangeNotification, object: nil)
         
         // Post a super cool notification.
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "MKiCloudSyncDidUpdateToLatest"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "iCloudSyncDidUpdateToLatest"), object: nil)
     }
     
     @objc private func toCloud() {

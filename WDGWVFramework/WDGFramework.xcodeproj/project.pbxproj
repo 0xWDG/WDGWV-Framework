@@ -57,6 +57,18 @@
 		DE29C2AE1FEC448A005B1718 /* WDGWVSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29C2AC1FEC448A005B1718 /* WDGWVSocket.swift */; };
 		DE29C2AF1FEC448A005B1718 /* WDGWVSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29C2AC1FEC448A005B1718 /* WDGWVSocket.swift */; };
 		DE29C2B01FEC448A005B1718 /* WDGWVSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29C2AC1FEC448A005B1718 /* WDGWVSocket.swift */; };
+		DE2DA9672122004C00F1CC3C /* Extension-UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */; };
+		DE2DA96F2122079300F1CC3C /* Extension-UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */; };
+		DE2DA9702122079400F1CC3C /* Extension-UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */; };
+		DE2DA9712122079500F1CC3C /* Extension-UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */; };
+		DE2DA9732122081D00F1CC3C /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */; };
+		DE2DA9742122081D00F1CC3C /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */; };
+		DE2DA9752122081D00F1CC3C /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */; };
+		DE2DA9762122081D00F1CC3C /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */; };
+		DE2DA981212209D600F1CC3C /* Extension-MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */; };
+		DE2DA982212209D600F1CC3C /* Extension-MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */; };
+		DE2DA983212209D600F1CC3C /* Extension-MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */; };
+		DE2DA984212209D600F1CC3C /* Extension-MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */; };
 		DE47B0D41F8E71590071B56B /* SafariKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47B0D31F8E71590071B56B /* SafariKeychainManager.swift */; };
 		DE47B0D51F8E71590071B56B /* SafariKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47B0D31F8E71590071B56B /* SafariKeychainManager.swift */; };
 		DE47B0D61F8E71590071B56B /* SafariKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47B0D31F8E71590071B56B /* SafariKeychainManager.swift */; };
@@ -110,10 +122,10 @@
 		DE53955C1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
 		DE53955D1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
 		DE53955E1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
-		DE97C4701ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */; };
-		DE97C4711ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */; };
-		DE97C4721ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */; };
-		DE97C4731ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */; };
+		DE97C4701ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
+		DE97C4711ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
+		DE97C4721ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
+		DE97C4731ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
 		DEBEE50F1F321E1400BAE42E /* WDGFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA93DA31C496BF60020DB60 /* WDGFramework.swift */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +214,9 @@
 		DE29C2A21FEC4312005B1718 /* WDGWVcUDPclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDGWVcUDPclient.swift; sourceTree = "<group>"; };
 		DE29C2A71FEC4416005B1718 /* WDGWVcTPCclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDGWVcTPCclient.swift; sourceTree = "<group>"; };
 		DE29C2AC1FEC448A005B1718 /* WDGWVSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDGWVSocket.swift; sourceTree = "<group>"; };
+		DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UILabel.swift"; sourceTree = "<group>"; };
+		DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension-UIImage.swift"; path = "WDGWVFramework/Extension-UIImage.swift"; sourceTree = "<group>"; };
+		DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension-MKMapView.swift"; path = "WDGWVFramework/Extension-MKMapView.swift"; sourceTree = "<group>"; };
 		DE47B0D31F8E71590071B56B /* SafariKeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariKeychainManager.swift; sourceTree = "<group>"; };
 		DE48C87C1D3FBBA2007ED015 /* appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appearance.swift; sourceTree = "<group>"; };
 		DE48C87D1D3FBBA2007ED015 /* Extension-Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-Array.swift"; sourceTree = "<group>"; };
@@ -220,7 +235,7 @@
 		DE4D38CF1ED20C7200151661 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		DE5395451E1C2BAA001A82C8 /* WDGWVSyncTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDGWVSyncTasks.swift; sourceTree = "<group>"; };
 		DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-Bundle.swift"; sourceTree = "<group>"; };
-		DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-NSAttributedString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,7 +412,6 @@
 				6EA93DA71C496BF60020DB60 /* ImageCache.swift */,
 				6EA93DA91C496BF60020DB60 /* WDGWVFrameworkWeb.swift */,
 				DE4D38A71ED2071C00151661 /* ImageSlider.swift */,
-				DE97C46F1ED9D2FF00A8AFEC /* NSAttributedString.swift */,
 				DE48C87C1D3FBBA2007ED015 /* appearance.swift */,
 				DEC05C571D52392A000AA489 /* Extensions */,
 				DEC05C581D52394B000AA489 /* Encoding */,
@@ -446,10 +460,14 @@
 		DEC05C571D52392A000AA489 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */,
+				DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */,
+				DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */,
 				DE48C87D1D3FBBA2007ED015 /* Extension-Array.swift */,
 				6EA93DA81C496BF60020DB60 /* Extension-String.swift */,
 				DE48C87F1D3FBBA2007ED015 /* Extension-Int.swift */,
 				DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */,
+				DE2DA980212209D600F1CC3C /* Extension-MKMapView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -643,12 +661,12 @@
 					6E02A0411C358CC200D2DD58 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 4V2D72S45C;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					6E02A04B1C358CC200D2DD58 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1000;
 					};
 					6E02A07C1C358D4400D2DD58 = {
 						CreatedOnToolsVersion = 7.2;
@@ -792,6 +810,7 @@
 				DE47B0D41F8E71590071B56B /* SafariKeychainManager.swift in Sources */,
 				6EA93DBE1C496BF60020DB60 /* ImageCache.swift in Sources */,
 				DE29C2AD1FEC448A005B1718 /* WDGWVSocket.swift in Sources */,
+				DE2DA9672122004C00F1CC3C /* Extension-UILabel.swift in Sources */,
 				DE48C8871D3FBBA2007ED015 /* appearance.swift in Sources */,
 				DE48C89B1D3FBBA2007ED015 /* md5.swift in Sources */,
 				DE29C29E1FEC428C005B1718 /* WDGWVcTCPsocket.c in Sources */,
@@ -799,14 +818,16 @@
 				DE48C8AB1D3FBBA2007ED015 /* SwiftGetHumanType.swift in Sources */,
 				DE29C2A81FEC4416005B1718 /* WDGWVcTPCclient.swift in Sources */,
 				DE5395461E1C2BAA001A82C8 /* WDGWVSyncTasks.swift in Sources */,
+				DE2DA981212209D600F1CC3C /* Extension-MKMapView.swift in Sources */,
 				6EA93DC21C496BF60020DB60 /* Extension-String.swift in Sources */,
 				DE48C88F1D3FBBA2007ED015 /* crc32.swift in Sources */,
 				6EA93DC61C496BF60020DB60 /* WDGWVFrameworkWeb.swift in Sources */,
 				DE4D38A81ED2071C00151661 /* ImageSlider.swift in Sources */,
 				DE48C8A31D3FBBA2007ED015 /* SHA1.swift in Sources */,
-				DE97C4701ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */,
+				DE97C4701ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */,
 				DE29C28F1FEC4201005B1718 /* WDGWVcUDPsocket.c in Sources */,
 				DE48C89F1D3FBBA2007ED015 /* ROT13.swift in Sources */,
+				DE2DA9732122081D00F1CC3C /* Extension-UIImage.swift in Sources */,
 				DE48C88B1D3FBBA2007ED015 /* Extension-Array.swift in Sources */,
 				DEBEE50F1F321E1400BAE42E /* WDGFramework.swift in Sources */,
 				DE48C8931D3FBBA2007ED015 /* Extension-Int.swift in Sources */,
@@ -828,9 +849,10 @@
 			files = (
 				DE29C29F1FEC428C005B1718 /* WDGWVcTCPsocket.c in Sources */,
 				DE48C8981D3FBBA2007ED015 /* levenshtein.swift in Sources */,
+				DE2DA982212209D600F1CC3C /* Extension-MKMapView.swift in Sources */,
 				6EA93DBF1C496BF60020DB60 /* ImageCache.swift in Sources */,
 				DE48C8881D3FBBA2007ED015 /* appearance.swift in Sources */,
-				DE97C4711ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */,
+				DE97C4711ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */,
 				DE29C2A91FEC4416005B1718 /* WDGWVcTPCclient.swift in Sources */,
 				6EA93DAF1C496BF60020DB60 /* WDGFramework.swift in Sources */,
 				DE29C2A41FEC4312005B1718 /* WDGWVcUDPclient.swift in Sources */,
@@ -840,12 +862,14 @@
 				DE29C2901FEC4201005B1718 /* WDGWVcUDPsocket.c in Sources */,
 				DE48C8901D3FBBA2007ED015 /* crc32.swift in Sources */,
 				6EA93DC71C496BF60020DB60 /* WDGWVFrameworkWeb.swift in Sources */,
+				DE2DA96F2122079300F1CC3C /* Extension-UILabel.swift in Sources */,
 				DE29C2AE1FEC448A005B1718 /* WDGWVSocket.swift in Sources */,
 				DE48C8A41D3FBBA2007ED015 /* SHA1.swift in Sources */,
 				DE48C8A01D3FBBA2007ED015 /* ROT13.swift in Sources */,
 				DE48C88C1D3FBBA2007ED015 /* Extension-Array.swift in Sources */,
 				DE47B0D51F8E71590071B56B /* SafariKeychainManager.swift in Sources */,
 				DE48C8941D3FBBA2007ED015 /* Extension-Int.swift in Sources */,
+				DE2DA9742122081D00F1CC3C /* Extension-UIImage.swift in Sources */,
 				DE53955C1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */,
 				6EA93DBB1C496BF60020DB60 /* iCloudSync.swift in Sources */,
 			);
@@ -865,9 +889,10 @@
 			files = (
 				DE29C2A01FEC428C005B1718 /* WDGWVcTCPsocket.c in Sources */,
 				DE48C8991D3FBBA2007ED015 /* levenshtein.swift in Sources */,
+				DE2DA983212209D600F1CC3C /* Extension-MKMapView.swift in Sources */,
 				6EA93DC01C496BF60020DB60 /* ImageCache.swift in Sources */,
 				DE48C8891D3FBBA2007ED015 /* appearance.swift in Sources */,
-				DE97C4721ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */,
+				DE97C4721ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */,
 				DE29C2AA1FEC4416005B1718 /* WDGWVcTPCclient.swift in Sources */,
 				6EA93DB01C496BF60020DB60 /* WDGFramework.swift in Sources */,
 				DE29C2A51FEC4312005B1718 /* WDGWVcUDPclient.swift in Sources */,
@@ -877,12 +902,14 @@
 				DE29C2911FEC4201005B1718 /* WDGWVcUDPsocket.c in Sources */,
 				DE48C8911D3FBBA2007ED015 /* crc32.swift in Sources */,
 				6EA93DC81C496BF60020DB60 /* WDGWVFrameworkWeb.swift in Sources */,
+				DE2DA9702122079400F1CC3C /* Extension-UILabel.swift in Sources */,
 				DE29C2AF1FEC448A005B1718 /* WDGWVSocket.swift in Sources */,
 				DE48C8A51D3FBBA2007ED015 /* SHA1.swift in Sources */,
 				DE48C8A11D3FBBA2007ED015 /* ROT13.swift in Sources */,
 				DE48C88D1D3FBBA2007ED015 /* Extension-Array.swift in Sources */,
 				DE47B0D61F8E71590071B56B /* SafariKeychainManager.swift in Sources */,
 				DE48C8951D3FBBA2007ED015 /* Extension-Int.swift in Sources */,
+				DE2DA9752122081D00F1CC3C /* Extension-UIImage.swift in Sources */,
 				DE53955D1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */,
 				6EA93DBC1C496BF60020DB60 /* iCloudSync.swift in Sources */,
 			);
@@ -902,9 +929,10 @@
 			files = (
 				DE29C2A11FEC428C005B1718 /* WDGWVcTCPsocket.c in Sources */,
 				DE48C89A1D3FBBA2007ED015 /* levenshtein.swift in Sources */,
+				DE2DA984212209D600F1CC3C /* Extension-MKMapView.swift in Sources */,
 				6EA93DC11C496BF60020DB60 /* ImageCache.swift in Sources */,
 				DE48C88A1D3FBBA2007ED015 /* appearance.swift in Sources */,
-				DE97C4731ED9D2FF00A8AFEC /* NSAttributedString.swift in Sources */,
+				DE97C4731ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */,
 				DE29C2AB1FEC4416005B1718 /* WDGWVcTPCclient.swift in Sources */,
 				6EA93DB11C496BF60020DB60 /* WDGFramework.swift in Sources */,
 				DE29C2A61FEC4312005B1718 /* WDGWVcUDPclient.swift in Sources */,
@@ -914,12 +942,14 @@
 				DE29C2921FEC4201005B1718 /* WDGWVcUDPsocket.c in Sources */,
 				DE48C8921D3FBBA2007ED015 /* crc32.swift in Sources */,
 				6EA93DC91C496BF60020DB60 /* WDGWVFrameworkWeb.swift in Sources */,
+				DE2DA9712122079500F1CC3C /* Extension-UILabel.swift in Sources */,
 				DE29C2B01FEC448A005B1718 /* WDGWVSocket.swift in Sources */,
 				DE48C8A61D3FBBA2007ED015 /* SHA1.swift in Sources */,
 				DE48C8A21D3FBBA2007ED015 /* ROT13.swift in Sources */,
 				DE48C88E1D3FBBA2007ED015 /* Extension-Array.swift in Sources */,
 				DE47B0D71F8E71590071B56B /* SafariKeychainManager.swift in Sources */,
 				DE48C8961D3FBBA2007ED015 /* Extension-Int.swift in Sources */,
+				DE2DA9762122081D00F1CC3C /* Extension-UIImage.swift in Sources */,
 				DE53955E1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */,
 				6EA93DBD1C496BF60020DB60 /* iCloudSync.swift in Sources */,
 			);
@@ -1084,7 +1114,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1115,7 +1145,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1126,7 +1156,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wdgwv.WDGWVFrameworkTests;
 				PRODUCT_NAME = WDGFramework;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1137,7 +1168,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wdgwv.WDGWVFrameworkTests;
 				PRODUCT_NAME = WDGFramework;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

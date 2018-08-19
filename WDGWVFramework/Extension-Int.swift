@@ -17,17 +17,20 @@
  */
 
 import Foundation
-
 extension Int {
     //func toString(x: Int) -> String {
     //    return String(format:"%2X", self)
     //}
+
+    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
     
-    static var range: CountableRange<Int> {
+    public static var range: CountableRange<Int> {
         return CountableRange<Int>(Int.min...Int.max-1)
     }
     
-    func toString(_ i: Int) -> String {
+    public func toString(_ i: Int) -> String {
         if (i == 16) {// hexadecimal
             return String(format: "%2X", self).lowercased()
                 .replacingOccurrences(of: " ", with: "")

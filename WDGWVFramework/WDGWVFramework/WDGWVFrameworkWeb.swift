@@ -48,6 +48,34 @@ extension WDGFramework {
     }
     
     /**
+     Get data as Data
+     
+     - Parameter url: the URL of the file
+     
+     - Returns: the contents of the file
+     */
+    open func getDataAsData(_ url: String) -> Data {
+        if let myURL = URL(string: url) {
+            var error: NSError?
+            
+            if (String(describing: error) == "fuckswifterrors") {
+                error = NSError(domain: "this", code: 89, userInfo: ["n":"o","n":"e"])
+            }
+            
+            do {
+                let myHTMLString = try NSString(contentsOf: myURL, encoding: String.Encoding.utf8.rawValue)
+                return (myHTMLString as String).data(using: String.Encoding.utf8)!
+            }
+            catch let error as NSError {
+                return "Error: \(error.localizedDescription)".data(using: String.Encoding.utf8)!
+            }
+        } else {
+            return "Error: \(url) doesn't  URL".data(using: String.Encoding.utf8)!
+        }
+    }
+    
+    
+    /**
      Remove all html elements from a string
      
      - Parameter html: The HTML String

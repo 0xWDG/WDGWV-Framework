@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-// REMOVE AFTER DEBUG
-public extension Int {
-    /// SwiftRandom extension
-    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
-        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
-    }
-}
-
-extension UIImage {
-    func imageResize (sizeChange:CGSize)-> UIImage{
-        
-        let hasAlpha = true
-        let scale: CGFloat = 0.0 // Use scale factor of main screen
-        
-        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
-        self.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
-        
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        return scaledImage!
-    }
-}
-
 open class ImageSlider {
     var images: [UIImage] = []
     var imageHeight: Int
@@ -59,7 +37,7 @@ open class ImageSlider {
         print("Scrollview Size: x:\(scrollView.frame.origin.x) y:\(scrollView.frame.origin.y) w:\(scrollView.frame.size.width) h:\(scrollView.frame.size.height)")
         for image in images {
             let imageView = UIImageView.init(frame: CGRect(x: xPos, y: 0.0, width: imageSizeAsFloat, height: scrollView.frame.size.height))
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
+            imageView.contentMode = UIView.ContentMode.scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.masksToBounds = true
             imageView.image = image?.imageResize(sizeChange: CGSize(width: imageSizeAsFloat, height: scrollView.frame.size.height))

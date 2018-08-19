@@ -167,7 +167,7 @@ public extension WDGFramework {
     
     #if os(iOS)
     /**
-     Set Apps background as a specific color
+     Set Apps tint as a specific color
      
      - Parameter color: the color
      */
@@ -176,7 +176,16 @@ public extension WDGFramework {
         UIView.appearance().tintColor = color
         
         // Mac?
-        UIWindow.appearance().tintColor =  color
+        UIWindow.appearance().tintColor = color
+    }
+    
+    /**
+     Set TabBar background as a specific color
+     
+     - Parameter color: the color
+     */
+    public func setTabBarBackgroundColor(_ color: UIColor) {
+        UITabBar.appearance().barTintColor = color
     }
     
     /**
@@ -199,6 +208,15 @@ public extension WDGFramework {
      */
     @available(*, unavailable, message: "Only useable in iOS") public func setAppColor(color: AnyObject) {
     print("Not supported")
+    }
+    
+    /**
+     Set Apps background as a specific color
+     
+     - Parameter color: the color
+     */
+    @available(*, unavailable, message: "Only useable in iOS") public func setTabBarBackgroundColor(color: AnyObject) {
+        print("Not supported")
     }
     
     /**

@@ -232,7 +232,7 @@
 					};
 					216CAE331AE6B273009A69EF = {
 						CreatedOnToolsVersion = 6.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 					};
 					80098A501C12E5890029C530 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -509,7 +509,8 @@
 				PRODUCT_NAME = CommonCrypto;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -532,7 +533,8 @@
 				PRODUCT_NAME = CommonCrypto;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

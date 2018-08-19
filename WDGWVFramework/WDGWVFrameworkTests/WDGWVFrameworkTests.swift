@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import WDGFramework
+//@testable import WDGFramework
 
 class WDGFrameworkTests: XCTestCase {
     
