@@ -27,8 +27,9 @@ extension WDGFramework {
      
      - Returns: the contents of the file
      */
-    open func getDataAsText(_ url: String) -> String {
+    open func getDataAsText(_ url: String, _ post: Dictionary<String, String>? = ["nothing": "send"]) -> String {
         if let myURL = URL(string: url) {
+            if (post == ["nothing": "send"]) {
             var error: NSError?
             
             if (String(describing: error) == "fuckswifterrors") {
@@ -40,10 +41,50 @@ extension WDGFramework {
                 return myHTMLString as String
             }
             catch let error as NSError {
-                return "Error: \(error.localizedDescription)"
+                return "NSString Error: \(error.localizedDescription)"
+            }
+            }else {
+                var waiting = true
+                var data = ""
+                var request = URLRequest(url: myURL)
+                request.httpMethod = "POST"
+                request.setValue("application/x-www-form-urlencoded",
+                                 forHTTPHeaderField: "Content-Type")
+                
+                var httpBody = ""
+                var idx = 0
+                for (key, val) in post! {
+                    if (idx == 0) {
+                        httpBody.append(contentsOf:
+                            "\(key)=\(val.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)")
+                    } else {
+                        httpBody.append(contentsOf:
+                            "&\(key)=\(val.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)")
+                    }
+                    idx += 1
+                }
+                request.httpBody = httpBody.data(using: .utf8)
+                
+                let session = URLSession.shared
+                session.dataTask(with: request) { (sitedata, response, error) in
+                    if let sitedata = sitedata {
+                        data = String(data: sitedata, encoding: .utf8)!
+                        waiting = false
+                    } else {
+                        data = "Error"
+                        waiting = false
+                    }
+                    
+                    }.resume()
+                
+                while (waiting) {
+//                    print("Waiting...")
+                }
+                
+                return data
             }
         } else {
-            return "Error: \(url) doesn't  URL"
+            return "Error: \(url) doesn't appear to be a URL"
         }
     }
     
@@ -54,7 +95,7 @@ extension WDGFramework {
      
      - Returns: the contents of the file
      */
-    open func getDataAsData(_ url: String) -> Data {
+    open func getDataAsData(_ url: String, _ post: Dictionary<String, String>? = ["nothing": "send"]) -> Data {
         if let myURL = URL(string: url) {
             var error: NSError?
             
@@ -62,12 +103,53 @@ extension WDGFramework {
                 error = NSError(domain: "this", code: 89, userInfo: ["n":"o","n":"e"])
             }
             
-            do {
-                let myHTMLString = try NSString(contentsOf: myURL, encoding: String.Encoding.utf8.rawValue)
-                return (myHTMLString as String).data(using: String.Encoding.utf8)!
-            }
-            catch let error as NSError {
-                return "Error: \(error.localizedDescription)".data(using: String.Encoding.utf8)!
+            if (post == ["nothing": "send"]) {
+                do {
+                    let myHTMLString = try NSString(contentsOf: myURL, encoding: String.Encoding.utf8.rawValue)
+                    return (myHTMLString as String).data(using: String.Encoding.utf8)!
+                }
+                catch let error as NSError {
+                    return "Error: \(error.localizedDescription)".data(using: String.Encoding.utf8)!
+                }
+            } else {
+                var waiting = true
+                var data = "".data(using: .utf8)
+                var request = URLRequest(url: myURL)
+                request.httpMethod = "POST"
+                request.setValue("application/x-www-form-urlencoded",
+                                 forHTTPHeaderField: "Content-Type")
+                
+                var httpBody = ""
+                var idx = 0
+                for (key, val) in post! {
+                    if (idx == 0) {
+                        httpBody.append(contentsOf:
+                            "\(key)=\(val.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)")
+                    } else {
+                        httpBody.append(contentsOf:
+                            "&\(key)=\(val.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)")
+                    }
+                    idx += 1
+                }
+                request.httpBody = httpBody.data(using: .utf8)
+                
+                let session = URLSession.shared
+                session.dataTask(with: request) { (sitedata, response, error) in
+                    if let sitedata = sitedata {
+                        data = sitedata
+                        waiting = false
+                    } else {
+                        data = "Error".data(using: .utf8)
+                        waiting = false
+                    }
+                    
+                    }.resume()
+                
+                while (waiting) {
+//                    print("Waiting...")
+                }
+                
+                return data!
             }
         } else {
             return "Error: \(url) doesn't  URL".data(using: String.Encoding.utf8)!
