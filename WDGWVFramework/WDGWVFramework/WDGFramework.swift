@@ -48,11 +48,14 @@ open class WDGFramework {
      */
     public let product = "WDGWV Framework"
     
+    public var debug = false
+
     /**
      This will setup iCloud sync!
      NSUserDefaults to iCloud & Back.
      */
     public init(_ silent:Bool = false) {
+        self.debug = silent
         if (!WDG_Loaded) {
             let iCloud : WDGFrameworkiCloudSync = WDGFrameworkiCloudSync()
                 iCloud.startSync()
@@ -70,15 +73,27 @@ open class WDGFramework {
                 #endif
             }
             
-            WDG_Loaded=true
+            WDG_Loaded = true
+        }
+    }
+
+    public func printif(_ str: Any, file: String = #file, line: Int = #line, function: String = #function) {
+        if (debug) {
+            let x: String = (file.split("/").last)!.split(".").first!
+            Swift.print("[DEBUG] \(x):\(line) \(function):\n \(str)\n")
         }
     }
     
     /**
      ?
      */
-    open func log(_ message: String) -> Bool {
-        print(message)
+    @discardableResult
+    open func log(_ message: String, file: String = #file, line: Int = #line, function: String = #function) -> Bool {
+        if (debug) {
+            let x: String = (file.split("/").last)!.split(".").first!
+            Swift.print("[DEBUG] \(x):\(line) \(function):\n \(message)\n")
+        }
+
         return true
     }
 

@@ -122,6 +122,8 @@
 		DE53955C1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
 		DE53955D1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
 		DE53955E1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */; };
+		DE7C401221551B790049377F /* Extension-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7C401121551B790049377F /* Extension-UIViewController.swift */; };
+		DE7C401821551BD10049377F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7C401721551BD10049377F /* UIKit.framework */; };
 		DE97C4701ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
 		DE97C4711ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
 		DE97C4721ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */; };
@@ -235,6 +237,8 @@
 		DE4D38CF1ED20C7200151661 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		DE5395451E1C2BAA001A82C8 /* WDGWVSyncTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDGWVSyncTasks.swift; sourceTree = "<group>"; };
 		DE53955A1E1C2CCD001A82C8 /* Extension-Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-Bundle.swift"; sourceTree = "<group>"; };
+		DE7C401121551B790049377F /* Extension-UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIViewController.swift"; sourceTree = "<group>"; };
+		DE7C401721551BD10049377F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-NSAttributedString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7C401821551BD10049377F /* UIKit.framework in Frameworks */,
 				DE4D38C91ED20C4E00151661 /* CommonCrypto.framework in Frameworks */,
 				DE4D38B91ED20ABA00151661 /* Security.framework in Frameworks */,
 			);
@@ -438,6 +443,7 @@
 		DE4D38B71ED20ABA00151661 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE7C401721551BD10049377F /* UIKit.framework */,
 				DE4D38CF1ED20C7200151661 /* Security.framework */,
 				DE4D38CB1ED20C5E00151661 /* Security.framework */,
 				DE4D38B11ED209F300151661 /* CommonCrypto.xcconfig */,
@@ -461,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				DE97C46F1ED9D2FF00A8AFEC /* Extension-NSAttributedString.swift */,
+				DE7C401121551B790049377F /* Extension-UIViewController.swift */,
 				DE2DA9662122004C00F1CC3C /* Extension-UILabel.swift */,
 				DE2DA9722122081D00F1CC3C /* Extension-UIImage.swift */,
 				DE48C87D1D3FBBA2007ED015 /* Extension-Array.swift */,
@@ -813,6 +820,7 @@
 				DE2DA9672122004C00F1CC3C /* Extension-UILabel.swift in Sources */,
 				DE48C8871D3FBBA2007ED015 /* appearance.swift in Sources */,
 				DE48C89B1D3FBBA2007ED015 /* md5.swift in Sources */,
+				DE7C401221551B790049377F /* Extension-UIViewController.swift in Sources */,
 				DE29C29E1FEC428C005B1718 /* WDGWVcTCPsocket.c in Sources */,
 				DE53955B1E1C2CCD001A82C8 /* Extension-Bundle.swift in Sources */,
 				DE48C8AB1D3FBBA2007ED015 /* SwiftGetHumanType.swift in Sources */,
